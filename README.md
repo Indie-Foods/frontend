@@ -35,31 +35,31 @@ And finally, we aim to provide healthy home-cooked food at affordable prices.
 
 #### Landing Page
 
-![1](https://github.com/IndieFoods/frontend/blob/main/src/Assets/ReadmeAssets/1.png)
+![image](https://user-images.githubusercontent.com/75371580/192323729-ba93235f-1a03-413f-8462-10922a6fed34.png)
 
 #### Signup Page
 
-![2](https://github.com/IndieFoods/frontend/blob/main/src/Assets/ReadmeAssets/2.png)
+![image](https://user-images.githubusercontent.com/75371580/192323839-6610f6f8-0407-410f-b4e5-07da1244b366.png)
 
 #### User Home Page
 
-![3](https://github.com/IndieFoods/frontend/blob/main/src/Assets/ReadmeAssets/3.png)
+![image](https://user-images.githubusercontent.com/75371580/192323879-7314bf4d-d3c2-4322-8d6c-0bcfb0385a17.png)
 
 #### User Profile Page
 
-![4](https://github.com/IndieFoods/frontend/blob/main/src/Assets/ReadmeAssets/4.png)
+![image](https://user-images.githubusercontent.com/75371580/192323915-40c942dd-c042-4cf5-8219-5ae65867f570.png)
 
 #### Food Details Page
 
-![5](https://github.com/IndieFoods/frontend/blob/main/src/Assets/ReadmeAssets/5.png)
+![image](https://user-images.githubusercontent.com/75371580/192323973-8d57923e-b2a2-4057-90fe-edf9d2cea907.png)
 
 #### Chef Home Page
 
-![6](https://github.com/IndieFoods/frontend/blob/main/src/Assets/ReadmeAssets/6.png)
+![image](https://user-images.githubusercontent.com/75371580/192324014-0a2f45bb-afb9-467f-96e6-5526bf30dfc8.png)
 
 #### Chef Profile Page
 
-![7](https://github.com/IndieFoods/frontend/blob/main/src/Assets/ReadmeAssets/7.png)
+![image](https://user-images.githubusercontent.com/75371580/192324054-ac82e623-2e23-4fa6-910c-05477fa3fd30.png)
 
 ## Getting Started
 
@@ -86,8 +86,7 @@ npm start
 
 ## Contributors
 
-- [Guna Shekar Proddaturi](https://github.com/GunaShekar02)
-- [Kunal Jain](https://github.com/kunaljain0212)
 - [Akash Gupta](https://github.com/akashgupta1909)
 - [Harshil Mendpara](https://github.com/HarshilMendpara)
 - [Raj Varsani](https://github.com/RajVarsani)
+- [Ujjawal Gupta](https://github.com/UjjawalGupta30)
