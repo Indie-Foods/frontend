@@ -7,6 +7,7 @@ import {
   UPDATE_PROFILE_DATA_URL,
   UPDATE_PROFILE_PICTURE_URL,
   FETCH_CHEF_ALL_ORDERS,
+  SET_SIGN_CONTRACT_SUCCESS_URL,
 } from "../Utils/constants";
 
 export const addMenuItem = async (menuItems, accessToken) => {
@@ -73,6 +74,24 @@ export const updateProfilePicture = async (imageUrl, accessToken) => {
     throw err;
   }
 };
+
+export const setSignedContractSuccess = async (accessToken) => {
+  try {
+    const { data } = await axios.put(
+      SET_SIGN_CONTRACT_SUCCESS_URL,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
 export const updateProfileData = async (
   address,
   foodTypes,
