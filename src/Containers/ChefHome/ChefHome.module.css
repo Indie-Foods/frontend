@@ -21,3 +21,10 @@
     width: 90vw;
   }
 }
+
+.NoOrdersText {
+  margin-top: 5rem;
+  font-size: var(--font-24);
+  text-align: center;
+  width: 100%;
+}

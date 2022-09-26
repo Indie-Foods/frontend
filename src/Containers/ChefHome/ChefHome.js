@@ -9,9 +9,18 @@ import Navbar from "../../Components/Navbar";
 
 import { images } from "../../Components/StaticData";
 import { useSelector } from "react-redux";
-import { fetchOrders } from "./../../Services/chef.service";
+import {
+  fetchOrders,
+  setSignedContractSuccess,
+} from "./../../Services/chef.service";
 import Preloader from "../../Components/Preloader/Preloader";
 import notify from "./../../Utils/helper/notifyToast";
+
+import HelloSign from "hellosign-embedded";
+const client = new HelloSign({
+  clientId: "82f4b30c336f28a6a32849b208d4c2ff",
+});
+
 function randomDate(start, end) {
   return new Date(
     start.getTime() + Math.random() * (end.getTime() - start.getTime())
@@ -86,18 +95,44 @@ function ChefHome() {
     setHighlightData([totalOrders, totalEarnings, totalEarningInLastMonth]);
   }, [ordersData]);
 
+  useEffect(() => {
+    if (!chefData.hasSigned) {
+      client.open(chefData.signature_url);
+      client.on("sign", function (event) {
+        console.log(event);
+        setSignedContractSuccess(accessToken)
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    }
+  }, [chefData]);
+
   return (
     <>
-      {ordersData && highlightData[0] && todaysOrders ? (
+      {ordersData ? (
         <>
           <Navbar images={images} />
-          <div className={styles.ChefHomeWrapper}>
-            <ChefHomeLeftSec ordersData={todaysOrders} />
-            <div className={styles.ChefHomeRightSec}>
-              <ChefHomePageHighlight highlightData={highlightData} />
-              <PaymentHistory paymentData={ordersData} />
-            </div>
-          </div>
+          {chefData.hasSigned ? (
+            highlightData[0] && todaysOrders ? (
+              <div className={styles.ChefHomeWrapper}>
+                <ChefHomeLeftSec ordersData={todaysOrders} />
+                <div className={styles.ChefHomeRightSec}>
+                  <ChefHomePageHighlight highlightData={highlightData} />
+                  <PaymentHistory paymentData={ordersData} />
+                </div>
+              </div>
+            ) : (
+              <>
+                <h2 className={styles.NoOrdersText}>No orders yet</h2>
+              </>
+            )
+          ) : (
+            <h2 className={styles.NoOrdersText}>Please verify your account</h2>
+          )}
         </>
       ) : (
         <Preloader />
